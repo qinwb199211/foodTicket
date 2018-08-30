@@ -1,0 +1,40 @@
+<button mat-raised-button color="primary" (click)="logout()">Log out</button>
+
+<div class="wrapper mat-elevation-z8" >
+  <mat-table #table [dataSource]="userList">
+
+    <ng-container matColumnDef="teamId">
+      <mat-header-cell *matHeaderCellDef> Team Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.teamId}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <mat-header-cell *matHeaderCellDef> Role </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.role}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="ticket">
+      <mat-header-cell *matHeaderCellDef> Ticket </mat-header-cell>
+
+      <mat-cell  *matCellDef="let element">
+        <span *ngIf="!canEditTicket"> {{element.ticketNumber}}</span>
+        <mat-form-field *ngIf="canEditTicket" floatLabel="never" >
+          <input type="number" matInput (focus)="editing(element)" placeholder="ticket" [value]="element.ticketNumber"
+                 [(ngModel)]="element.ticketNumber">
+          <mat-icon class="done-edit fa fa-check" matSuffix *ngIf="userUnderEdit?.id===element?.id"
+                    (click)="onConfirm(element)"></mat-icon>
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+
+

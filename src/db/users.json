@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "111",
+      "password": "111",
+      "name": "Xiao Ming",
+      "role": "admin",
+      "teamId": "t1",
+      "ticketNumber": 1
+    },
+    {
+      "id": "222",
+      "password": "222",
+      "name": "Zhang San",
+      "role": "teamLeader",
+      "teamId": "t1",
+      "ticketNumber": 9
+    },
+    {
+      "id": "333",
+      "password": "333",
+      "name": "Li Si",
+      "role": "member",
+      "teamId": "t1",
+      "ticketNumber": 5
+    },
+    {
+      "id": "444",
+      "password": "444",
+      "name": "Wang Wu",
+      "role": "member",
+      "teamId": "t1",
+      "ticketNumber": 2
+    },
+    {
+      "id": "555",
+      "password": "555",
+      "name": "Zhao Liu",
+      "role": "member",
+      "teamId": "t2",
+      "ticketNumber": 2
+    },
+    {
+      "id": "666",
+      "password": "666",
+      "name": "Wenbo",
+      "role": "teamLeader",
+      "teamId": "t2",
+      "ticketNumber": 7
+    }
+  ]
+}
